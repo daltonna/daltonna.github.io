@@ -61,7 +61,7 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h2>EECS 481 at The University of Michigan</h2>
+										<h2><a href="https://web.eecs.umich.edu/~weimerw/481/index.html">EECS 481 at The University of Michigan</a></h2>
 									</header>
 									<p>
 										This course teaches the fundamentals of software engineering with a focus on five core topics: Measurement and Risk, Quality Assurance, Software Defects, Software Design, and Productivity at Scale. These concepts are taught through six projects, beginning with generating high coverage test suites and ending with making a contribution to an open-source codebase.
@@ -77,7 +77,7 @@
 							<section id="two" class="spotlights">
 								<section>
 									<a href="https://daltonna.itch.io/metroid-nes" class="image">
-										<img src="images/pic08.jpg" alt="" data-position="center center" />
+										<img src="images/AFL_Evosuite_Screenshot.jpg" alt="" data-position="center center" />
 									</a>
 									<div class="content">
 										<div class="inner">
@@ -89,11 +89,14 @@
 												The first assignment focuses on generating a high-coverage test suite for the <a href="https://en.wikipedia.org/wiki/Libpng">libpng</a> library. The test suite consists of PNG images that we selected or created. The goal for the assignment was to get >= 36% statement coverage using the <a href="https://gcc.gnu.org/onlinedocs/gcc/Gcov.html">gcov</a> test coverage program for gcc. 
 												Getting above 30% statement coverage was straightforward, but getting to 36% required us to be more creative with what images we included in our test suite. We eventually got 38% coverage by manually editing properties of the PNGs such as gamma values and shading properties.
 											</p>
+											<h5>Test Automation</h5>
 											<p>
-												our website.
+												The second project built on top of the first, using the libpng's pngtest program as the subject program for which we generated test input using the fuzz testing tool <a href="https://en.wikipedia.org/wiki/American_fuzzy_lop_(fuzzer)">American Fuzzy Lop.</a>
+												Similarly, in the second portion of this project we used <a href="https://en.wikipedia.org/wiki/EvoSuite">EvoSuite</a> to act as an oracle as well as generate unit tests for the subject program <a href="https://jsoup.org/">JSoup,</a> an HTML parser.
 												<br/>
-												 app.
+													Most of the trouble with this assignment came with instrumenting AFL to work with my virtual machine. Our goal for the assignment was to reach 510 total paths and increase our statement coverage from the seed images we used in the first project. We reached 513 paths after letting AFL run for about 3 hours.
 												<br/>
+												Our coverage increased significantly using AFL along with our manually-selected test suite, increasing by about eight percent. The project was a great lesson in the ease of use of black-box testing and how it can produce great results while requiring less time to use.
 												
 												Accessing information sent by the users was one of the more difficult aspects of this project early on.
 											</p>
